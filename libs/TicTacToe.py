@@ -38,7 +38,7 @@ class TicTacToe():
 
     def end_round(self):
         self.switch_player()
-        os.system('clear')
+        self.clear_terminal()
         self.display_board()
         print("Game Over")
         print(F"{self.current_player} won!")
@@ -67,7 +67,7 @@ class TicTacToe():
             )
 
     def take_turn(self):
-        os.system('clear')
+        self.clear_terminal()
         self.display_board()
         print(F"Make a move {'Player One' if self.current_player == 'X' else 'Player Two'}...")
         pos = self.read_move()
@@ -129,6 +129,8 @@ class TicTacToe():
         
         return {'x': x, 'y': y}
 
-if __name__ == '__main__':
-    game = TicTacToe()
-    game.run()
+    def clear_terminal(self):
+        if os.name == 'nt':
+            os.system('cls')
+        else:
+            os.system('clear')
