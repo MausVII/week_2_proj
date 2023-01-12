@@ -28,7 +28,7 @@ class TicTacToe():
             self.clear_terminal()
             self.display_main_menu()
             choice = self.get_main_option()
-        
+            
             # Play option
             if choice.lower() == 'p':
                 round_over = False
@@ -56,7 +56,7 @@ class TicTacToe():
             elif choice.lower() == 'q':
                 input("Press any key to confirm.")
                 quit()
-
+    
     def display_board(self):
         print()
         for idx, col in enumerate(self.grid):
